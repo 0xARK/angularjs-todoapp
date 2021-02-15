@@ -1,0 +1,24 @@
+{
+  "name": "TP6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "tailwind": "npx tailwindcss build css/tailwind.css -o css/style.css",
+    "autoprefixer": "postcss css/style.css -u autoprefixer --no-map -o css/style.css",
+    "minify": "postcss css/style.css -u cssnano --no-map -o css/style.min.css",
+    "build": "npm run tailwind && npm run autoprefixer",
+    "prod": "npm run tailwind && npm run autoprefixer && npm run minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xARK/angularjs-todoapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xARK/angularjs-todoapp/issues"
+  },
+  "homepage": "https://github.com/0xARK/angularjs-todoapp#readme"
+}
