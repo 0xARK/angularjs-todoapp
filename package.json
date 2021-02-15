@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/0xARK/angularjs-todoapp/issues"
   },
-  "homepage": "https://github.com/0xARK/angularjs-todoapp#readme"
+  "homepage": "https://github.com/0xARK/angularjs-todoapp#readme",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "tailwindcss": "^2.0.3"
+  }
 }
