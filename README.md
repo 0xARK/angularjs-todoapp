@@ -1,4 +1,4 @@
-The task manager application for android from the Task Management Corp.
+Task manager web application from the Task Management Corp.
 ==
 
 **Version 1.0.0**
