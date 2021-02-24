@@ -1,4 +1,4 @@
-The task manager application for android from the Task Manegement Corp.
+Task manager web application from the Task Management Corp.
 ==
 
 **Version 1.0.0**
@@ -6,7 +6,7 @@ The task manager application for android from the Task Manegement Corp.
 
 ## Contributors
 
-- Matéo Castella ; univerty mail : <castella.e1900282@etud.univ-ubs.fr>
+- Matéo Castella ; univerty mail : <castella.e1900282@etud.univ-ubs.fr> ; personal mail : <castella.mateo@gmail.com>
 - Kierian Tirlemont ; university mail : <tirlemont.e1900238@etud.univ-ubs.fr> ; personal mail : <tirlemontkierian@gmail.com>
 - If you want to contribute to this project you're welcome.
 
