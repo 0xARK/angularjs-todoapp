@@ -14,6 +14,7 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     screens: {
+      xs: '470px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -34,6 +35,7 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      'th-color': '#6366f1'
     },
     spacing: {
       px: '1px',

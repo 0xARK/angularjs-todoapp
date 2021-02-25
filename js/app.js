@@ -16,12 +16,16 @@ var app = angular.module("todoapp", ["ngRoute"]);
 
 app.factory("mixins", [function () { return new Mixins()}]);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
 
     $routeProvider
         .when('/' , {
-            templateUrl: "partials/list.html",
+            templateUrl: "partials/list_task.html",
             controller: "ListTaskController"
+        })
+        .when('/add', {
+            templateUrl: "partials/add_task.html",
+            controller: "AddTaskController"
         })
         .otherwise({
             redirectTo: "/"
