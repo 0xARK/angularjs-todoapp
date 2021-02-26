@@ -8,11 +8,12 @@
                 <div class="flex-shrink-0">
                     <a href="/" class="font-bold text-2xl text-th-color">TodoApp</a>
                 </div>
+                <a href="#!/" class="ml-5 text-gray-700 hover:bg-gray-300 hover:text-black dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Task list</a>
+                <a href="#!/add" class="text-gray-700 hover:bg-gray-300 hover:text-black dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add a task</a>
             </div>
 
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <a href="#!/" class="text-gray-700 hover:bg-gray-300 hover:text-black dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Task list</a>
-                <a href="#!/add" class="text-gray-700 hover:bg-gray-300 hover:text-black dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">Add a task</a>
+                <div ng-include="'partials/dark_mode_toggle_button.html'"></div>
             </div>
 
         </div>

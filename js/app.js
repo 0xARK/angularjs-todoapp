@@ -30,6 +30,18 @@ Mixins.prototype.toggleDarkMode = function(darkMode) {
 
 }
 
+Mixins.prototype.createTask = function(name, startDate, endDate, duration, url, category, description) {
+
+    let tasks = this.getLSI('tasks');
+    if (!tasks) tasks = []
+
+    tasks.push({'name': name, 'start': startDate, 'end': endDate, 'duration': duration, 'url': url,
+        'category': category, 'description': description})
+
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+
+}
+
 // create angular module
 var app = angular.module("todoapp", ["ngRoute"]);
 // use mixins with our application
