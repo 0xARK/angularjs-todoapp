@@ -35,7 +35,7 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
-      'th-color': '#6366f1'
+      'th-color': 'var(--theme-color)'
     },
     spacing: {
       px: '1px',

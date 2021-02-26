@@ -1,21 +1,40 @@
+// setup application mixins
 function Mixins() {}
 
 Mixins.prototype.setLSI = function (name, value) {
-    localStorage.setItem(name, value)
+    localStorage.setItem(name, value);
 }
 
 Mixins.prototype.getLSI = function (name) {
-    return localStorage.getItem(name)
+    return localStorage.getItem(name) === null ? false : localStorage.getItem(name);
 }
 
 Mixins.prototype.removeLSI = function (name) {
-    localStorage.removeItem(name)
+    localStorage.removeItem(name);
 }
 
+Mixins.prototype.setupDarkMode = function() {
+
+    let darkMode = this.getLSI('darkMode');
+    this.toggleDarkMode(darkMode);
+
+}
+
+Mixins.prototype.toggleDarkMode = function(darkMode) {
+
+    this.setLSI('darkMode', darkMode);
+
+    var el = angular.element(document.querySelector('html'));
+
+    darkMode === 'true' || darkMode === true ? el.addClass('dark') : el.removeClass('dark');
+
+}
+
+// create angular module
 var app = angular.module("todoapp", ["ngRoute"]);
-
+// use mixins with our application
 app.factory("mixins", [function () { return new Mixins()}]);
-
+// setup angular routes
 app.config(function($routeProvider, $locationProvider) {
 
     $routeProvider

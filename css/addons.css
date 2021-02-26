@@ -1,0 +1,18 @@
+:root {
+    --theme-color: #6366f1;
+}
+
+.toggle__dot {
+    top: -.25rem;
+    left: -.25rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.toggled > .toggle__dot {
+    transform: translateX(100%);
+    background-color: var(--theme-color);
+}
+
+.toggled > .toggle__line {
+    background-color: rgb(55, 65, 81);
+}
