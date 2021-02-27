@@ -1,3 +1,6 @@
+/**
+ * Allows to show stored tasks
+ */
 app.controller('ListTaskController', function($scope, mixins) {
 
     // setup darkMode
@@ -8,10 +11,18 @@ app.controller('ListTaskController', function($scope, mixins) {
         mixins.toggleDarkMode($scope.darkMode);
     };
 
-    $scope.todos = [{name: "todo1", content: "test"}, {name: "todo2", content: "test"}];
+    // setup mobile menu
+    $scope.controlMobileMenu = function() {
+        mixins.toggleMobileMenu()
+    }
+
+    $scope.todos = JSON.parse(mixins.getLSI('tasks'))
 
 });
 
+/**
+ * Allows to handle task creation
+ */
 app.controller('AddTaskController', function($scope, mixins) {
 
     // setup darkMode
@@ -21,6 +32,11 @@ app.controller('AddTaskController', function($scope, mixins) {
         $scope.darkMode === 'true' || $scope.darkMode === true ? $scope.darkMode = false : $scope.darkMode = true;
         mixins.toggleDarkMode($scope.darkMode);
     };
+
+    // setup mobile menu
+    $scope.controlMobileMenu = function() {
+        mixins.toggleMobileMenu()
+    }
 
     // handle task creation
     $scope.name = null;
