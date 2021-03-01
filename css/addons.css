@@ -1,5 +1,6 @@
 :root {
     --theme-color: #6366f1;
+    --menu-height: 64px;
 }
 
 /* dark mode toogle button */
@@ -17,4 +18,12 @@
 
 .toggled > .toggle__line {
     background-color: rgb(55, 65, 81);
+}
+
+.app-content-height {
+    height: calc(100vh - var(--menu-height));
+}
+
+.mt-menu {
+    margin-top: 64px;
 }

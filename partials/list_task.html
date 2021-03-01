@@ -1,8 +1,35 @@
 <div ng-include="'partials/menu.html'"></div>
 
-<div class="max-w-7xl bg-red-500 mx-auto sm:px-6 lg:px-8">
-    <div ng-repeat="todo in todos">
-        {{ todo.name }}<br>
-        {{ todo.content }}
+<div class="grid grid-cols-12 gap-0">
+
+    <div class="col-span-3 overflow-auto app-content-height mt-menu">
+
+        <div ng-if="todo" ng-repeat="todo in todos" class="bg-purple-600 p-4">
+            {{ todo.name }}<br>
+            {{ todo.description | substr:0:1 }}
+        </div>
+
+        <div ng-if="!todo" class="text-center dark:text-gray-600">
+            <a href="#!/add">
+                <div class="m-4 p-4 bg-th-color text-white rounded-xl font-semibold">
+                    ADD A TASK
+                </div>
+            </a>
+            <div class="m-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow">
+                You have no tasks to perform.
+            </div>
+        </div>
+
     </div>
+
+    <div class="col-span-9 app-content-height mt-menu">
+
+        <div ng-if="!selected" class="text-center dark:text-gray-600">
+            <div class="m-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow">
+                Click on a task to display it here.
+            </div>
+        </div>
+
+    </div>
+
 </div>

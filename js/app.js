@@ -110,6 +110,12 @@ Mixins.prototype.createTask = function(name, startDate, endDate, duration, url, 
 var app = angular.module("todoapp", ["ngRoute"]);
 // use mixins with our application
 app.factory("mixins", [function () { return new Mixins()}]);
+// create filters
+app.filter('substr', function() {
+    return function (input, start, end) {
+        return input.substring(start, end);
+    }
+})
 // setup angular routes
 app.config(function($routeProvider, $locationProvider) {
 

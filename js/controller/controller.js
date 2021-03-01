@@ -16,7 +16,8 @@ app.controller('ListTaskController', function($scope, mixins) {
         mixins.toggleMobileMenu()
     }
 
-    $scope.todos = JSON.parse(mixins.getLSI('tasks'))
+    $scope.todos = JSON.parse(mixins.getLSI('tasks'));
+    $scope.selected = false;
 
 });
 
@@ -68,8 +69,8 @@ app.controller('AddTaskController', function($scope, mixins) {
 
                 $scope.success = "Your task has been saved successfully.";
 
-                mixins.createTask($scope.name, $scope.description, $scope.startingDate, $scope.endingDate,
-                    $scope.duration, $scope.category, $scope.url)
+                mixins.createTask($scope.name, $scope.startingDate, $scope.endingDate,
+                    $scope.duration, $scope.url, $scope.category, $scope.description)
 
                 $scope.name = $scope.description = $scope.startingDate = $scope.endingDate = $scope.duration =
                     $scope.category = $scope.url = $scope.error = null;
