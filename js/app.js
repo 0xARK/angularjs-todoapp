@@ -82,6 +82,7 @@ Mixins.prototype.toggleMobileMenu = function() {
 /**
  * Allows to create a task in the local storage
  *
+ * @param id - id of the task
  * @param name - name of the task
  * @param startDate - starting date of the task
  * @param endDate - ending date of the task
@@ -90,12 +91,13 @@ Mixins.prototype.toggleMobileMenu = function() {
  * @param category - category of the task
  * @param description - description of the task
  */
-Mixins.prototype.createTask = function(name, startDate, endDate, duration, url, category, description) {
+Mixins.prototype.createTask = function(id, name, startDate, endDate, duration, url, category, description) {
 
     let tasks = this.getLSI('tasks');
     if (!tasks) tasks = []
+    tasks = JSON.parse(tasks);
 
-    tasks.push({'name': name, 'start': startDate, 'end': endDate, 'duration': duration, 'url': url,
+    tasks.push({'id': id, 'name': name, 'start': startDate, 'end': endDate, 'duration': duration, 'url': url,
         'category': category, 'description': description})
 
     localStorage.setItem('tasks', JSON.stringify(tasks))

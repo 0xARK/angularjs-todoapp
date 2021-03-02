@@ -16,8 +16,20 @@ app.controller('ListTaskController', function($scope, mixins) {
         mixins.toggleMobileMenu()
     }
 
-    $scope.todos = JSON.parse(mixins.getLSI('tasks'));
+    $scope.tasks = JSON.parse(mixins.getLSI('tasks'));
     $scope.selected = false;
+
+    $scope.showTask = function (id) {
+
+        var el = angular.element(document.querySelector('#task-list-' + $scope.selected));
+        el.removeClass('bg-th-color dark:bg-th-color')
+
+        var s = angular.element(document.querySelector('#task-list-' + id));
+        s.addClass('bg-th-color dark:bg-th-color');
+
+        $scope.selected = id;
+
+    };
 
 });
 
@@ -36,8 +48,8 @@ app.controller('AddTaskController', function($scope, mixins) {
 
     // setup mobile menu
     $scope.controlMobileMenu = function() {
-        mixins.toggleMobileMenu()
-    }
+        mixins.toggleMobileMenu();
+    };
 
     // handle task creation
     $scope.name = null;
@@ -68,8 +80,10 @@ app.controller('AddTaskController', function($scope, mixins) {
             if (submit) {
 
                 $scope.success = "Your task has been saved successfully.";
+                let tasks = JSON.parse(mixins.getLSI('tasks')),
+                    id = tasks === false ? 0 : tasks[tasks.length - 1].id + 1;
 
-                mixins.createTask($scope.name, $scope.startingDate, $scope.endingDate,
+                mixins.createTask(id, $scope.name, $scope.startingDate, $scope.endingDate,
                     $scope.duration, $scope.url, $scope.category, $scope.description)
 
                 $scope.name = $scope.description = $scope.startingDate = $scope.endingDate = $scope.duration =
@@ -83,6 +97,6 @@ app.controller('AddTaskController', function($scope, mixins) {
 
         }
 
-    }
+    };
 
 });

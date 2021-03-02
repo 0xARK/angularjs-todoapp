@@ -1,9 +1,11 @@
+/* Variables */
+
 :root {
     --theme-color: #6366f1;
     --menu-height: 64px;
 }
 
-/* dark mode toogle button */
+/* Dark mode toogle button */
 
 .toggle__dot {
     top: -.25rem;
@@ -20,10 +22,34 @@
     background-color: rgb(55, 65, 81);
 }
 
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #aaaaaa;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--theme-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Other */
+
 .app-content-height {
     height: calc(100vh - var(--menu-height));
 }
 
 .mt-menu {
     margin-top: 64px;
+}
+
+.task-height {
+    height: 90vh;
 }
