@@ -5,7 +5,7 @@
     <div class="text-white fixed b-0 bg-white dark:bg-gray-800 h-3/4 w-screen p-4 overflow-auto">
         <div class="flex justify-between">
             <button ng-click="closeTask()" class="text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md focus:outline-none bg-th-color focus:ring-2 focus:ring-th-color focus:ring-offset-2 focus:ring-offset-gray-200 dark:focus:ring-offset-gray-900">Close</button>
-            <button class="text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md focus:outline-none bg-red-600 focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-gray-200 dark:focus:ring-offset-gray-900">Delete</button>
+            <button ng-click="deleteTask(selected.id)" class="text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md focus:outline-none bg-red-600 focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-gray-200 dark:focus:ring-offset-gray-900">Delete</button>
         </div>
         <hr class="w-full mt-5 border border-gray-200 dark:border-gray-700">
         <div class="font-semibold text-2xl text-black dark:text-white mt-5">{{ selected.name }}</div>
@@ -24,7 +24,7 @@
 
     <div class="md:col-span-5 lg:col-span-4 xl:col-span-3 overflow-auto app-content-height mt-menu">
 
-        <div ng-if="tasks" ng-repeat="task in tasks" ng-click="showTask(task.id)" id="{{ 'task-list-' + task.id }}" class="task-list m-4 p-4 rounded-xl text-black dark:text-white bg-white dark:bg-gray-800 bg-opacity-50 dark:bg-opacity-50 hover:bg-opacity-100 dark:hover:bg-opacity-100 cursor-pointer shadow">
+        <div ng-if="tasks !== false" ng-repeat="task in tasks" ng-click="showTask(task.id)" id="{{ 'task-list-' + task.id }}" class="task-list m-4 p-4 rounded-xl text-black dark:text-white bg-white dark:bg-gray-800 bg-opacity-50 dark:bg-opacity-50 hover:bg-opacity-100 dark:hover:bg-opacity-100 cursor-pointer shadow">
             <p class="font-semibold">{{ task.name | substr:0:50 }}</p>
             <p class="text-xs mt-3">Starting date : {{ task.start | date }}</p>
             <p ng-if="task.end" class="text-xs">Ending date : {{ task.end | date }}</p>
@@ -52,7 +52,7 @@
             <div class="m-4 p-8 bg-white dark:bg-gray-800 rounded-xl shadow task-height overflow-auto">
                 <div class="flex justify-between">
                     <button ng-click="closeTask()" class="text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md focus:outline-none bg-th-color focus:ring-2 focus:ring-th-color focus:ring-offset-2 focus:ring-offset-gray-200 dark:focus:ring-offset-gray-900">Close</button>
-                    <button class="text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md focus:outline-none bg-red-600 focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-gray-200 dark:focus:ring-offset-gray-900">Delete</button>
+                    <button ng-click="deleteTask(selected.id)" class="text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md focus:outline-none bg-red-600 focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-gray-200 dark:focus:ring-offset-gray-900">Delete</button>
                 </div>
                 <hr class="w-full mt-5 border border-gray-200 dark:border-gray-700">
                 <div class="font-semibold text-2xl text-black dark:text-white mt-5">{{ selected.name }}</div>

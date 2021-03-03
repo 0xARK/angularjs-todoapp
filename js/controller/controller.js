@@ -56,9 +56,17 @@ app.controller('ListTaskController', function($scope, mixins) {
 
             tasks = JSON.parse(tasks)
 
-            for (t of tasks) {
+            $scope.closeTask();
+
+            for (t in tasks) {
                 if (tasks[t].id === id) {
-                    // TODO: delete task
+                    tasks.splice(t, 1);
+                    $scope.tasks = false;
+                    mixins.setLSI('tasks', JSON.stringify(tasks));
+                    if (tasks.length === 0) {
+                        mixins.removeLSI('tasks');
+                    }
+                    $scope.tasks = JSON.parse(mixins.getLSI('tasks'));
                 }
             }
         }

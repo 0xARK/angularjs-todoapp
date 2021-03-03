@@ -107,8 +107,11 @@ Mixins.prototype.toggleMobileTask = function () {
 Mixins.prototype.createTask = function(id, name, startDate, endDate, duration, url, category, description) {
 
     let tasks = this.getLSI('tasks');
-    if (!tasks) tasks = []
-    tasks = JSON.parse(tasks);
+    if (tasks === false) {
+        tasks = [];
+    } else {
+        tasks = JSON.parse(tasks);
+    }
 
     tasks.push({'id': id, 'name': name, 'start': startDate, 'end': endDate, 'duration': duration, 'url': url,
         'category': category, 'description': description})
