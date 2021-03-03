@@ -47,9 +47,13 @@
 }
 
 .mt-menu {
-    margin-top: 64px;
+    margin-top: var(--menu-height);
 }
 
 .task-height {
     height: 90vh;
+}
+
+.b-0 {
+    bottom: 0px;
 }

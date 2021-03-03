@@ -19,15 +19,28 @@ app.controller('ListTaskController', function($scope, mixins) {
     $scope.tasks = JSON.parse(mixins.getLSI('tasks'));
     $scope.selected = false;
 
+    $scope.closeTask = function () {
+
+        mixins.toggleMobileTask();
+
+        var el = angular.element(document.querySelector('#task-list-' + $scope.selected.id));
+        el.removeClass('bg-th-color dark:bg-th-color');
+
+        $scope.selected = false;
+
+    };
+
     $scope.showTask = function (id) {
 
-        var el = angular.element(document.querySelector('#task-list-' + $scope.selected));
-        el.removeClass('bg-th-color dark:bg-th-color')
+        var el = angular.element(document.querySelector('#task-list-' + $scope.selected.id));
+        el.removeClass('bg-th-color dark:bg-th-color');
 
         var s = angular.element(document.querySelector('#task-list-' + id));
         s.addClass('bg-th-color dark:bg-th-color');
 
-        $scope.selected = id;
+        $scope.selected = mixins.getTask(id);
+
+        mixins.toggleMobileTask()
 
     };
 

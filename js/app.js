@@ -79,6 +79,19 @@ Mixins.prototype.toggleMobileMenu = function() {
 
 }
 
+Mixins.prototype.toggleMobileTask = function () {
+
+    var el = angular.element(document.querySelector('#mobile-overlay'));
+    var show = document.querySelector('#mobile-overlay').classList.contains('hidden')
+
+    if (show) {
+        el.removeClass('hidden')
+    } else {
+        el.addClass('hidden')
+    }
+
+}
+
 /**
  * Allows to create a task in the local storage
  *
@@ -104,6 +117,29 @@ Mixins.prototype.createTask = function(id, name, startDate, endDate, duration, u
 
 }
 
+Mixins.prototype.getTask = function (id) {
+
+    let tasks = this.getLSI('tasks');
+    var ret = false;
+
+    if (tasks !== false) {
+
+        tasks = JSON.parse(tasks);
+
+        for (t of tasks) {
+            if (t.id === id) {
+                ret = t;
+            }
+        }
+
+    } else {
+        ret = false
+    }
+
+    return ret;
+
+}
+
 /**
  * Following code allows to setup AngularJS
  */
@@ -115,7 +151,16 @@ app.factory("mixins", [function () { return new Mixins()}]);
 // create filters
 app.filter('substr', function() {
     return function (input, start, end) {
-        return input.substring(start, end);
+        ret = undefined;
+
+        if (input !== undefined && input !== null) {
+            ret = input.substring(start, end);
+            if (input.length > end) {
+                ret += '...';
+            }
+        }
+
+        return ret;
     }
 })
 // setup angular routes
