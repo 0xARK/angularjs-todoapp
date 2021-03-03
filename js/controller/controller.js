@@ -48,6 +48,23 @@ app.controller('ListTaskController', function($scope, mixins) {
 
     };
 
+    $scope.deleteTask = function (id) {
+
+        tasks = mixins.getLSI('tasks');
+
+        if (tasks !== false) {
+
+            tasks = JSON.parse(tasks)
+
+            for (t of tasks) {
+                if (tasks[t].id === id) {
+                    // TODO: delete task
+                }
+            }
+        }
+
+    }
+
 });
 
 /**
