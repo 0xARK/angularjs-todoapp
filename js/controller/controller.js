@@ -32,6 +32,10 @@ app.controller('ListTaskController', function($scope, mixins) {
 
     $scope.showTask = function (id) {
 
+        if ($scope.selected !== false) {
+            $scope.closeTask();
+        }
+
         var el = angular.element(document.querySelector('#task-list-' + $scope.selected.id));
         el.removeClass('bg-th-color dark:bg-th-color');
 
