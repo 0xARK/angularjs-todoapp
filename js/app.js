@@ -113,7 +113,7 @@ Mixins.prototype.createTask = function(id, name, startDate, endDate, duration, u
         tasks = JSON.parse(tasks);
     }
 
-    tasks.push({'id': id, 'name': name, 'start': startDate, 'end': endDate, 'duration': duration, 'url': url,
+    tasks.unshift({'id': id, 'name': name, 'start': startDate, 'end': endDate, 'duration': duration, 'url': url,
         'category': category, 'description': description})
 
     localStorage.setItem('tasks', JSON.stringify(tasks))
@@ -121,6 +121,8 @@ Mixins.prototype.createTask = function(id, name, startDate, endDate, duration, u
 }
 
 Mixins.prototype.getTask = function (id) {
+
+    id = parseInt(id)
 
     let tasks = this.getLSI('tasks');
     var ret = false;
@@ -135,8 +137,6 @@ Mixins.prototype.getTask = function (id) {
             }
         }
 
-    } else {
-        ret = false
     }
 
     return ret;
@@ -177,6 +177,10 @@ app.config(function($routeProvider, $locationProvider) {
         .when('/add', {
             templateUrl: "partials/add_task.html",
             controller: "AddTaskController"
+        })
+        .when('/edit/:id', {
+            templateUrl: "partials/edit_task.html",
+            controller: "EditTaskController"
         })
         .otherwise({
             redirectTo: "/"

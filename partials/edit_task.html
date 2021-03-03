@@ -1,0 +1,41 @@
+<div ng-include="'partials/menu.html'"></div>
+
+<div class="flex items-center justify-center mt-menu">
+
+    <div class="mx-2 w-auto sm:w-full sm:max-w-md lg:max-w-md xl:max-w-sm mt-20">
+
+        <form class="rounded mb-2 flex flex-col w-full">
+
+            <label for="name" class="text-sm dark:text-white">Name</label>
+            <input id="name" ng-model="name" type="text" class="dark:text-white dark:bg-gray-700 flex-1 mt-2 w-full py-1 px-2 border-2 rounded-lg text-sm focus:outline-none border-tranparent dark:border-transparent focus:border-th-color dark:focus:border-th-color" />
+
+            <label for="startingDate" class="text-sm mt-5 dark:text-white">Starting date</label>
+            <input id="startingDate" ng-model="startingDate" type="date" class="dark:text-white dark:bg-gray-700 flex-1 mt-2 w-full py-1 px-2 border-2 rounded-lg text-sm focus:outline-none border-tranparent dark:border-transparent focus:border-th-color dark:focus:border-th-color" />
+
+            <label for="endingDate" class="text-sm mt-5 dark:text-white">Ending date</label>
+            <input id="endingDate" ng-model="endingDate" type="date" class="dark:text-white dark:bg-gray-700 flex-1 mt-2 w-full py-1 px-2 border-2 rounded-lg text-sm focus:outline-none border-tranparent dark:border-transparent focus:border-th-color dark:focus:border-th-color" />
+
+            <label for="duration" class="text-sm mt-5 dark:text-white">Duration</label>
+            <input id="duration" ng-model="duration" type="time" class="dark:text-white dark:bg-gray-700 flex-1 mt-2 w-full py-1 px-2 border-2 rounded-lg text-sm focus:outline-none border-tranparent dark:border-transparent focus:border-th-color dark:focus:border-th-color" />
+
+            <label for="url" class="text-sm mt-5 dark:text-white">URL</label>
+            <input id="url" ng-model="url" type="url" class="dark:text-white dark:bg-gray-700 flex-1 mt-2 w-full py-1 px-2 border-2 rounded-lg text-sm focus:outline-none border-tranparent dark:border-transparent focus:border-th-color dark:focus:border-th-color" />
+
+            <label for="category" class="text-sm mt-5 dark:text-white">Category</label>
+            <input id="category" ng-model="category" type="text" class="dark:text-white dark:bg-gray-700 flex-1 mt-2 w-full py-1 px-2 border-2 rounded-lg text-sm focus:outline-none border-tranparent dark:border-transparent focus:border-th-color dark:focus:border-th-color" />
+
+            <label for="description" class="text-sm mt-5 dark:text-white">Description</label>
+            <textarea id="description" ng-model="description" class="dark:text-white dark:bg-gray-700 flex-1 mt-2 w-full py-1 px-2 border-2 rounded-lg text-sm focus:outline-none border-tranparent dark:border-transparent focus:border-th-color dark:focus:border-th-color"></textarea>
+
+            <p ng-if="$scope.error !== null" class="text-red-600 mt-3 text-sm">{{ error }}</p>
+            <p ng-if="$scope.success !== null" class="text-green-600 mt-3 text-sm">{{ success }}</p>
+
+            <button ng-click="editTask()" class="w-full flex-shrink-0 mt-5 text-white text-base font-semibold py-1 px-2 rounded-lg shadow-md focus:outline-none bg-th-color focus:ring-2 focus:ring-th-color focus:ring-offset-2 focus:ring-offset-gray-200 dark:focus:ring-offset-gray-900">
+                Edit
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
