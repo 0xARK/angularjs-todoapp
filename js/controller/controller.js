@@ -73,6 +73,15 @@ app.controller('ListTaskController', function($scope, mixins) {
 
     }
 
+    $scope.filters = [{'name':'Added', 'action':'id'}, {'name':'Name', 'action':'name'}, {'name':'Starting date', 'action':'start'}, {'name':'Ending date', 'action':'end'}, {'name':'Duration', 'action':'duration'}, {'name':'Category', 'action':'category'}];
+    $scope.sort = $scope.filters[0];
+
+    $scope.sortTask = function (sort) {
+
+        $scope.sort = sort
+
+    }
+
 });
 
 /**
