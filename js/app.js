@@ -166,9 +166,8 @@ app.filter('substr', function() {
         return ret;
     }
 })
-app.filter
 // setup angular routes
-app.config(function($routeProvider, $locationProvider) {
+app.config(function($routeProvider) {
 
     $routeProvider
         .when('/' , {
