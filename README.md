@@ -36,5 +36,14 @@ The goal of the project is to create a responsive todo list web application usin
 
 We were able to create this web application in this short time. The web application is responsive and the user is able to add, remove and watch a task in a single page application. The application works well. It could be cool to develop the multi language part of the project. Finally, you can find here the android application which has been generate with cordova here : https://github.com/Kierian-50/toDo-app-cordova. The android application also works well, the respensive is very good but we find an issue, when we click on the logo of the application, then we're not able to click on the logo app that redirect the user at the main view, we must close the app and restart it and next the application works again. We didn't have the time to fix this bug. 
 
-## The required file to execute this software / Installation
+## Installation
 
+To install and used this project you have any required files. 
+
+You can start the project on your local machine with this command bellow when you are in the structure of the project :
+
+```bash
+python3 -m http.server 
+```
+
+If you want to see the rendering of the project, the project is hosted here: https://todo-app-tp.netlify.com/ 
